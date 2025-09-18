@@ -1,0 +1,189 @@
+/* ====== Paleta (igual ao seu App.css) ====== */
+:root {
+    --fundo-topo: #2d5135; /* navbar */
+    --fundo: #264b2f;      /* fundo principal */
+    --linha: #e3f0e2;
+  
+    --texto: #e7efe3;
+    --texto2: #e3e8e4;
+  
+    --creme: #ffeabd;
+  
+    --btn-entrar: #819b49;
+    --btn-tx: #1f2a1d;
+  
+    --acao: #2f4e38;       /* verde escuro do botão “Ir para” */
+    --acao-press: #273f2d;
+  
+    --maxw: 1120px;
+  }
+  
+  @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap');
+  
+  /* ====== base ====== */
+  * { box-sizing: border-box }
+  html, body, #root { height: 100% }
+  html { scroll-behavior: smooth }
+  
+  body {
+    margin: 0;
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: "Fira Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  a { color: inherit; text-decoration: none }
+  
+  .container {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  
+  /* ====== topo (navbar simples) ====== */
+  .topo {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--fundo-topo);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .12);
+  }
+  
+  .topo__nav {
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .menu {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+  }
+  
+  .btn-entrar {
+    border: none;
+    border-radius: 999px;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 16px;
+    font-weight: 700;
+    background: var(--btn-entrar);
+    color: var(--btn-tx);
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .08);
+  }
+  
+  /* ====== miolo ====== */
+  .miolo { padding: 40px 0 56px }
+  
+  /* grade de 3 cartões */
+  .grade {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 36px;
+  }
+  
+  /* correção do breakpoint */
+  @media (max-width: 980px) {
+    .grade { grid-template-columns: 1fr 1fr }
+  }
+  
+  @media (max-width: 650px) {
+    .grade { grid-template-columns: 1fr }
+  }
+  
+  .card {
+    background: var(--creme);
+    color: #1e1e1e;
+    border-radius: 18px;
+    padding: 28px 28px 22px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .18);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  /* “Mesa+” no script grande */
+  .card__marca {
+    margin: 0 0 6px;
+    font-family: "Alex Brush", cursive;
+    font-weight: 100;
+    font-size: 72px;
+    line-height: 0.95;
+    letter-spacing: 0.4px;
+    color: #1e1e1e;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* subtítulo */
+  .card__sub {
+    margin: 0 0 16px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #1f2a1d;
+  }
+  
+  /* ícone central */
+  .card__icone {
+    width: 176px;
+    height: 176px;
+    display: grid;
+    place-items: center;
+    margin: 10px 0 24px;
+  }
+  
+  .card__icone img {
+    width: 100%;
+    height: auto;
+    filter: brightness(0);
+  }
+  
+  /* link “Ir para” com cara de botão */
+  .card__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    background: var(--acao);
+    color: var(--texto);
+    border: none;              /* como é <a>, não tem borda nativa */
+    border-radius: 999px;
+    height: 48px;
+    padding: 0 28px;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: .2px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .12), inset 0 -1px 0 rgba(0, 0, 0, .15);
+  }
+  
+  .card__btn:active { background: var(--acao-press) }
+  
+  /* responsivo tipografia */
+  @media (max-width: 520px) {
+    .card__marca { font-size: 56px }
+    .card__sub   { font-size: 22px }
+    .card__icone { width: 150px; height: 150px }
+  }
+  
+  /* Navbar full-bleed */
+  .topo__nav.container {
+    max-width: none;
+    padding-left: 3%;
+    padding-right: 12px;
+  }
+  
+  /* Ajuste do brasão */
+  .brand > img {
+    height: 55px;
+    width: 50px;
+  }
+  

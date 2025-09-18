@@ -56,7 +56,7 @@ function Cabecalho({ ativo, onNavegar }) {
           <a className="botao" href="https://seu-dominio.com/login" target="_blank" rel="noopener noreferrer">
             Entrar
           </a>
-          <a className="botao botao--secundario" href="https://seu-dominio.com/cadastro" target="_blank" rel="noopener noreferrer">
+          <a className="botao botao--secundario" href="/hudCadastro.html" target="_blank" rel="noopener noreferrer">
             Cadastre-se
           </a>
         </div>
